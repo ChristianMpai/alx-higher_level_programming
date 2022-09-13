@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 class Node:
     """Type class node"""
