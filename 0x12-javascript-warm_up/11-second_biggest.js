@@ -1,9 +1,14 @@
 #!/usr/bin/node
-if (process.argv[2] === undefined || (process.argv[3] === undefined)) {
-  console.log(0);
-} else {
-  process.argv.shift();
-  process.argv.shift();
-  const Myarray = process.argv.map(Number).sort((a, b) => a - b).reverse();
-  console.log(Myarray[1]);
+// searches the second biggest integer in the list of arguments
+if (!process.argv[2] || !process.argv[3]) { console.log(0); } else {
+// store args in a list
+  let list = [];
+  for (let i = 0; process.argv[i]; i++) {
+    list.push(process.argv[i]);
+  }
+  // sort list from least to greatest
+  list.sort();
+  // find 2nd to last element in list
+  let idx = list.length - 2;
+  console.log(list[idx]);
 }
